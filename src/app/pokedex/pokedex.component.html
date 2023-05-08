@@ -3,31 +3,31 @@
     Pokédex
   </div>
   <div class="row m-3 d-flex justify-content-between ">
-    <button class="btn border-white w-25 btn-secondary">
+    <button (click)="decrease()" class="btn border-white w-25 btn-secondary">
       <
     </button>
-    <button class="btn border-white w-25  btn-secondary">
+    <button (click)="increase()" class="btn border-white w-25  btn-secondary">
       >
     </button>
 
-    <div class="display-6">
-      Bulbasaur   N-0001
+    <div  class="display-6">
+        {{pokedex.name | titlecase}} Nº{{pokedex.id}}
     </div>
 
     <div class="row bg-secondary text-white justify-content-around rounded pt-3 mt-5">
       <div class="col d-flex">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png">
+        <img [src]="imagemPokemon()">
       </div>
 
-      <div class="col">
-        There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.
-      </div>
 
-      <div class="col d-flex">
-        Altura:
+      <div id="alt" class="col d-flex">
+        Altura: {{pokedex.height/10}} m 
+      </div>
+      <div id="alt" class="col d-flex">
+        Peso: {{pokedex.weight/10}} kg
       </div>
       <div class="col d-flex">
-        Peso:
+        {{pokedex}}
       </div>
 
     </div>

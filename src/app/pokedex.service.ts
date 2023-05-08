@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
+import { Observable } from 'rxjs';
+import { Pokedex } from './pokedex';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokedexService {
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private http: HttpClient) {}
 
-    this.carregarPokemons();
+  getPokemon(id : number): Observable<Pokedex>{
+    return this.http.get<Pokedex>(`https://pokeapi.co/api/v2/pokemon/${id}`);
   }
-  async carregarPokemons() {
-    const requisicao = await this.httpClient.get<any>('https://pokeapi.co/api/v2/pokemon/ditto').toPromise;
-
-    const pokemons = requisicao.results;
-    console.log(requisicao);
+  
   }
-}

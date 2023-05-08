@@ -4,4 +4,5 @@ export interface Pokedex {
   id: number;
   height: number;
   weight: number;
+
 }
