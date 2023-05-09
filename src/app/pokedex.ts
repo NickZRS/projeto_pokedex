@@ -5,4 +5,19 @@ export interface Pokedex {
   height: number;
   weight: number;
 
+  abilities: {
+
+  ability:{
+    name:string;
+  }
+
+  }[];
+
+  types: {
+    type: {
+      name:string;
+
+    }
+  }[];
+
 }

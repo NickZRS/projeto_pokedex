@@ -1,38 +1,38 @@
 <div class="container border bg-white mt-5 rounded text-center">
-  <div class="display-2 text-warning">
-    Pokédex
-  </div>
-  <div class="row m-3 d-flex justify-content-between ">
+  <div class="display-2 text-warning">Pokédex</div>
+  <div class="row m-3 d-flex justify-content-between">
     <button (click)="decrease()" class="btn border-white w-25 btn-secondary">
       <
     </button>
-    <button (click)="increase()" class="btn border-white w-25  btn-secondary">
+    <button (click)="increase()" class="btn border-white w-25 btn-secondary">
       >
     </button>
 
-    <div  class="display-6">
-        {{pokedex.name | titlecase}} Nº{{pokedex.id}}
+    <div class="display-6">
+      {{ pokedex.name | titlecase }} Nº{{ pokedex.id }}
     </div>
 
-    <div class="row bg-secondary text-white justify-content-around rounded pt-3 mt-5">
-      <div class="col d-flex">
-        <img [src]="imagemPokemon()">
+    <div
+      class="row bg-secondary text-white justify-content-around rounded pt-3 mt-5"
+    >
+      <div>
+        <img [src]="imagemPokemon()" />
       </div>
 
-
-      <div id="alt" class="col d-flex">
-        Altura: {{pokedex.height/10}} m 
+      <div class="container">
+        <div class="row">
+          <div id="alt" class="col border">
+            Altura: {{ pokedex.height / 10 }} m
+          </div>
+          <div id="alt" class="col border">
+            Peso: {{ pokedex.weight / 10 }} kg
+          </div>
+        </div>
+        <div class="row">
+          <div id="abt" class="col-sm border">{{ getAbility() }}</div>
+          <div id="abt" class="col-sm border">{{ getType() }}</div>
+        </div>
       </div>
-      <div id="alt" class="col d-flex">
-        Peso: {{pokedex.weight/10}} kg
-      </div>
-      <div class="col d-flex">
-        {{pokedex}}
-      </div>
-
     </div>
-
-
   </div>
-
 </div>
